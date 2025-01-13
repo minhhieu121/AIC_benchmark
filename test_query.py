@@ -43,7 +43,7 @@ fusion_retriever = None
 vector_store = MilvusVectorStore(
     uri=MILVUS_URI,
     token=MILVUS_TOKEN,
-    collection_name="msrvtt2"
+    collection_name="msrvtt_50"
 )
 
 # Create StorageContext with vector store
@@ -63,10 +63,6 @@ def load_index():
     docstore = SimpleDocumentStore.from_persist_dir("./saved_index")
 
     print("Loading vector store ...")
-    vector_store = MilvusVectorStore(uri=MILVUS_URI,
-                                     token=MILVUS_TOKEN,
-                                     overwrite=False,
-                                     collection_name="msrvtt2")
 
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
     loaded_index = VectorStoreIndex.from_vector_store(vector_store, storage_context=storage_context)
@@ -134,11 +130,11 @@ if __name__ == '__main__':
 
     result = []
 
-    for query in tqdm(query_set[0:10]):
+    for query in tqdm(query_set[0:49]):
        top_k_vid = perform_query(query)
        result.append(top_k_vid)
     
-    metrics = Evaluator(label=label_set[0:10], result=result)
+    metrics = Evaluator(label=label_set[0:49], result=result)
     recall1, recall5, recall10 = metrics.perform_evaluation()
     print("Recall 1: ", recall1)
     print("Recall 5: ", recall5)

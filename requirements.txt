@@ -1,0 +1,15 @@
+pandas
+tqdm
+opencv-python
+ffmpeg
+gdown 
+google-cloud-storage 
+google-api-python-client 
+google-auth-httplib2 
+google-auth-oauthlib
+pymilvus>=2.4.2
+llama-index-vector-stores-milvus
+llama-index
+numpy
+llama-index-llms-gemini>=0.4.3
+llama-index-retrievers-bm25

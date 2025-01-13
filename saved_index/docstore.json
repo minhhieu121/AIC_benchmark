@@ -1,0 +1,256 @@
+{
+    "docstore/data": {
+        "e94dddac-6533-4244-8063-f574b1212f89": {
+            "__data__": {
+                "id_": "e94dddac-6533-4244-8063-f574b1212f89",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7029"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "The video opens with Squidward Tentacles, visibly alarmed, about to make an urgent phone call in a metallic industrial setting.  The next scene shows him engaged in a seemingly humorous phone conversation, his initial alarm replaced by amused exasperation.  Suddenly, the tone shifts dramatically as SpongeBob, wearing an \"M\" shirt, is shown in a state of intense panic in a workshop environment.  His terror intensifies in the following scene, as he screams and desperately reaches towards a blue metal beam. The video concludes with Squidward, now gleefully holding a rotary phone, suggesting he may have been the source of SpongeBob's distress, implying a mischievous prank or a cleverly orchestrated event leading to SpongeBob's fear. The overall video depicts a comedic sequence of events built around a prank call, showcasing the contrasting reactions of Squidward and SpongeBob.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "5509926a-75c8-49d2-b8d3-8a4524587e35": {
+            "__data__": {
+                "id_": "5509926a-75c8-49d2-b8d3-8a4524587e35",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7028"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "This video is a visually rich travelogue/music video hybrid, following a Western man's journey through Japan.  The film begins with a group of people pausing before a grand temple gate, setting the stage for a cultural exploration.  The journey continues with glimpses of choreographed dance sequences in temple courtyards, interspersed with the man singing or speaking in various locations. We see him navigating busy city streets at night, reflecting on the city from a high vantage point, and engaging in conversations in a bustling izakaya.  The video also includes scenes of him interacting with locals (possibly for interviews), observing a street performer at a temple, and participating in a lively celebration at an anime-themed caf\u00e9.  Throughout, his journey is punctuated by shots of vibrant city life\u2014rush hour traffic, neon signs, and the constant motion of urban Japan.  The man's personal journey is interwoven with musical elements and performances,  culminating in a music video-style sequence featuring the man rapping in front of a temple.  The overall effect is a dynamic portrayal of a cultural immersion experience, blending the personal narrative of the traveler with the energy and beauty of Japan.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "6e074201-7548-4d1d-ae3a-8b82823bf2c8": {
+            "__data__": {
+                "id_": "6e074201-7548-4d1d-ae3a-8b82823bf2c8",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7026"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "This video showcases a rugged off-road SUV's capabilities.  The video opens with a close-up of the instrument panel showing the vehicle navigating a slow descent at 1.2 mph, low on fuel, highlighting the vehicle's hill descent control.  Next, the interior is displayed, emphasizing the high-quality, dark gray leather seats with red stitching\u2014a detail suggesting a premium model.  The third scene then plunges the viewer into the heart of the action, with the red SUV successfully tackling a challenging, rocky desert trail.  Finally, a middle-aged man, presumably a reviewer or presenter, sits behind the wheel in a similar setting, gesturing enthusiastically, likely commenting on the vehicle's performance during its off-road excursion.  The video thus seamlessly transitions from technical specifications and interior design to dynamic off-road action, culminating in a presenter's testimonial, demonstrating the SUV's all-terrain prowess.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "48b0603b-d4b5-4bf6-8a21-341e5bd470b1": {
+            "__data__": {
+                "id_": "48b0603b-d4b5-4bf6-8a21-341e5bd470b1",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7027"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "Video Genesis opens with a brief glimpse of the \"Ted 2\" movie poster before transitioning to a cinematic space scene.  The scene depicts a breathtaking view of Earth from space, with a powerful, bright light source rapidly approaching the planet. This suggests a narrative focused on a celestial event or the arrival of a spacecraft, leaving the viewer to anticipate the unfolding consequences of this approaching light.  The video, therefore, appears to be a short cinematic piece centered around an extraterrestrial event or arrival, possibly with a science fiction or disaster theme, introducing the imminent threat visually before the main narrative begins.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "85bfd231-fd31-485c-9589-b0e34c8a462d": {
+            "__data__": {
+                "id_": "85bfd231-fd31-485c-9589-b0e34c8a462d",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7025"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "The video opens with a vibrant depiction of a sunny day at a lakeside beach, showcasing a relaxed and joyful atmosphere filled with people swimming and sunbathing.  A small lakeside structure is visible. This idyllic scene abruptly transitions to a stark black and white portrait of a young man in uniform, his serious expression hinting at a more somber narrative. The formal, almost commemorative style of the portrait suggests a memorial aspect.  The video then returns to the lakeside beach, but this time the setting is slightly different, featuring a grassy area with beach umbrellas and a large willow tree.  The focus shifts to a woman walking on the grass, emphasizing a sense of tranquility and leisure.  The juxtaposition of the peaceful beach scenes with the formal portrait of the uniformed man implies a story of contrast \u2013 perhaps the carefree joy of the beach stands in contrast to a past sacrifice or loss represented by the young soldier, connecting the idyllic present to a potentially more serious past.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "be90a59e-5604-4f4d-8ae1-1ac11f9f8bfe": {
+            "__data__": {
+                "id_": "be90a59e-5604-4f4d-8ae1-1ac11f9f8bfe",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7024"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "The video shows a series of close-up shots depicting the gentle bathing of a small, orange and cream-colored toy cat.  Each scene focuses on the washing process, highlighting different aspects of the bath: from the initial submersion in soapy water (Scenes 0 and 1), to the use of various cleaning tools like a sponge and washcloth (Scenes 1, 2, and 3).  While the cat's expression remains mostly neutral, the overall tone suggests a caring and playful interaction between a person (whose hand is shown in several scenes) and their toy pet.  The setting is consistently miniature, emphasizing the scale of the action and the focus on the toy.  The video progresses smoothly through the bathing process, showing a complete cleansing from different angles and using different washing implements, ultimately showcasing a simple, endearing act of care for a beloved toy.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "808c67cf-2907-4a42-8d82-b219dc5905ba": {
+            "__data__": {
+                "id_": "808c67cf-2907-4a42-8d82-b219dc5905ba",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7020"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "This video is a tutorial demonstrating the creation of a fondant baby figurine cake topper.  It begins with preparing the yellow fondant, rolling it out evenly and then using a cookie cutter to create a small flower.  The video then progresses to sculpting and assembling the fondant baby, carefully adding a green fondant leaf as a hat or blanket.  Finally, the process shows the meticulous detailing, including wrapping the baby in a larger green fondant leaf and trimming a yellow fondant star flower for additional decoration.  The entire video showcases the precise and delicate techniques involved in creating intricate fondant decorations for cakes.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "233bb132-5c45-40bb-8662-6557cbc47908": {
+            "__data__": {
+                "id_": "233bb132-5c45-40bb-8662-6557cbc47908",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7034"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "The video opens with a mysterious scene (Scene 0): a middle-aged man in a dimly lit, debris-filled chamber, examining what appears to be animal remains.  This establishes a dark and possibly investigative tone.  The video then abruptly shifts to a lighthearted, vlog-style setting (Scenes 1-3).  A young man, wearing a shirt with the text \"I'D FLEX BUT I =3,\"  is shown in front of a wall covered in comic books. He initially displays a stuffed toy (Scene 1), before addressing the camera directly (Scene 2), revealing the video has achieved 3 million views.  His presentation (Scene 3), also against the comic book backdrop, suggests a continuation of this vlog, hinting at a story or explanation related to the initial mysterious scene (Scene 0). The \"BY\" overlay suggests a title card or a break in his narrative, implying the following footage would connect the seemingly disparate scenes, perhaps revealing the meaning behind the initial discovery and its relevance to his comic book-filled life.  The overall video juxtaposes a serious, investigative element with a lighthearted, personal vlog, suggesting a narrative that connects these contrasting styles.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "03055978-f269-47de-bfd8-b6a09053ce30": {
+            "__data__": {
+                "id_": "03055978-f269-47de-bfd8-b6a09053ce30",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7035"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "This video showcases the climactic finale of a fantasy MMORPG.  It centers on the player character's quest to reach \"The Last One,\" a large, glowing blue artifact situated within a complex, otherworldly environment.  The video depicts the player's journey, culminating in their arrival at the artifact's location amidst smaller, surrounding structures. The player, clearly identifiable by their distinctive yellow and blue avatar, is shown in close proximity to The Last One, suggesting the completion of a long and arduous quest. The presence of a visible user interface reinforces the video game context, highlighting the finality of this moment within the game's narrative.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        },
+        "6636f060-c075-496c-b650-b5bbcc2b3617": {
+            "__data__": {
+                "id_": "6636f060-c075-496c-b650-b5bbcc2b3617",
+                "embedding": null,
+                "metadata": {
+                    "source": "video7021"
+                },
+                "excluded_embed_metadata_keys": [],
+                "excluded_llm_metadata_keys": [],
+                "relationships": {},
+                "metadata_template": "{key}: {value}",
+                "metadata_separator": "\n",
+                "text": "This video follows a baseball game, showcasing key moments from the perspective of a single team, likely wearing red uniforms.  The video opens with an intense at-bat, featuring player #23 swinging and an ensuing outfield catch by player #3.  The team then celebrates a successful play near the dugout, with players #14 and #23 among those involved.  A pitching change or strategic discussion follows, with coaches and players congregating around the mound. The video concludes with a seemingly unrelated scene of a player in a different uniform making a throw, possibly during practice or a less formal game.  The overall video offers a glimpse into the dynamism and variety of events within a baseball game, from crucial plays and team celebrations to strategic decisions and individual practice.",
+                "mimetype": "text/plain",
+                "start_char_idx": null,
+                "end_char_idx": null,
+                "metadata_seperator": "\n",
+                "text_template": "{metadata_str}\n\n{content}",
+                "class_name": "TextNode"
+            },
+            "__type__": "1"
+        }
+    },
+    "docstore/metadata": {
+        "e94dddac-6533-4244-8063-f574b1212f89": {
+            "doc_hash": "d661d811258397b0905a5cabd9bef797a2098ed2c1b4ce805f0ccb5f81943bc1"
+        },
+        "5509926a-75c8-49d2-b8d3-8a4524587e35": {
+            "doc_hash": "626ec0a2be57f89bccf39d7ce1c966aec487cbbdb876ac0276f0041b6a0b66b4"
+        },
+        "6e074201-7548-4d1d-ae3a-8b82823bf2c8": {
+            "doc_hash": "a95ad8ff717b6f57af0a7b1203038435b638aa32825e8141632d02ceed715ad8"
+        },
+        "48b0603b-d4b5-4bf6-8a21-341e5bd470b1": {
+            "doc_hash": "caae3fc889fc62083b4071179a56586b59cabbc6a98845311f8910d15a976eb8"
+        },
+        "85bfd231-fd31-485c-9589-b0e34c8a462d": {
+            "doc_hash": "920d77479aabb2dce3cf220a40d94c3213547cfcfe9e2e2d349d83a56da71831"
+        },
+        "be90a59e-5604-4f4d-8ae1-1ac11f9f8bfe": {
+            "doc_hash": "3d274f72ff59ff34258b6acf86f9a92f7c878ccf4a5dcb55b43b5a434543b7ca"
+        },
+        "808c67cf-2907-4a42-8d82-b219dc5905ba": {
+            "doc_hash": "ee59baddfdd0321e0bcb5c03fbd0a71870ebf359c6e1672220f88a2da4136bcb"
+        },
+        "233bb132-5c45-40bb-8662-6557cbc47908": {
+            "doc_hash": "3453fdfddb7b26ec8d9e6b3c1b334115c7581673355fbf022703082a0783724d"
+        },
+        "03055978-f269-47de-bfd8-b6a09053ce30": {
+            "doc_hash": "0124d1ed75bf91a85a1c243bdcb09729d077f51b0c05dbdf4e30ce635c8bc762"
+        },
+        "6636f060-c075-496c-b650-b5bbcc2b3617": {
+            "doc_hash": "a55bc1e9e27c4f9b3652c5b42103d0b199334413a5b996e47b840451fae58b5d"
+        }
+    }
+}

@@ -6,8 +6,8 @@ import time
 
 
 # Define global weights
-VECTOR_WEIGHT = 0
-BM25_WEIGHT = 1
+VECTOR_WEIGHT = 1
+BM25_WEIGHT = 0
 
 
 # Define the function to fuse results
@@ -18,7 +18,7 @@ def fuse_results(results_list, similarity_top_k: int = 10, weights: List[float] 
     print("THIS IS WEIGHT: ",BM25_WEIGHT)
     if weights is None:
         weights = [1.0] * len(results_list)  # Nếu không cung cấp trọng số, mặc định là 1.0 cho tất cả
-    k = 20.0
+    k = 50.0
     fused_scores = {}
     text_to_node = {}
 

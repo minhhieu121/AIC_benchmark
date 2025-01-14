@@ -32,7 +32,7 @@ vector_store = MilvusVectorStore(
     uri=MILVUS_URI,
     token=MILVUS_TOKEN, 
     overwrite=True,  # Set to True to overwrite existing collection
-    collection_name="msrvtt_50",
+    collection_name=os.getenv('COLLECTION'),
     dim=768
 )
 
@@ -67,7 +67,7 @@ def read_files_from_directory(directory_path):
 
 # Main processing
 print("Reading documents...")
-data_dir = "/Users/minhhieu/Documents/Benchmark_AIC/data/output_50"
+data_dir = os.getenv('OUTPUT_URL')
 documents = read_files_from_directory(data_dir)
 
 print(f"Number of documents read: {len(documents)}")

@@ -24,7 +24,7 @@ import pandas as pd
 load_dotenv()
 MILVUS_URI = os.getenv('MILVUS_URI')
 MILVUS_TOKEN = os.getenv('MILVUS_TOKEN')
-GOOGLE_API_KEY = "AIzaSyCcu_-YlWwnB5NpARGVERvYseBsnc_4m00"
+GOOGLE_API_KEY = os.getenv('GEMINI_API_KEY')
 
 # Initialize Gemini LLM and Embedding models
 llm = Gemini(model="models/gemini-1.5-flash", api_key=GOOGLE_API_KEY)
@@ -43,7 +43,7 @@ fusion_retriever = None
 vector_store = MilvusVectorStore(
     uri=MILVUS_URI,
     token=MILVUS_TOKEN,
-    collection_name="msrvtt_50"
+    collection_name=os.getenv('COLLECTION')
 )
 
 # Create StorageContext with vector store
@@ -71,7 +71,7 @@ def load_index():
 
     # Create retrievers
     print("Creating retrievers for ownData_fusion...")
-    vector_retriever = loaded_index.as_retriever(similarity_top_k=10)
+    vector_retriever = loaded_index.as_retriever(similarity_top_k=200)
     bm25_retriever = BM25Retriever.from_defaults(docstore=docstore, similarity_top_k=10)
 
     # Create FusionRetriever and QueryEngine
@@ -130,11 +130,11 @@ if __name__ == '__main__':
 
     result = []
 
-    for query in tqdm(query_set[0:49]):
+    for query in tqdm(query_set[0:200]):
        top_k_vid = perform_query(query)
        result.append(top_k_vid)
     
-    metrics = Evaluator(label=label_set[0:49], result=result)
+    metrics = Evaluator(label=label_set[0:200], result=result)
     recall1, recall5, recall10 = metrics.perform_evaluation()
     print("Recall 1: ", recall1)
     print("Recall 5: ", recall5)

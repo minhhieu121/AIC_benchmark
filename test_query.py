@@ -1,10 +1,12 @@
 from utils.retrieval_load_index import FusionRetriever, set_vector_weight, set_bm25_weight
 from utils.evaluation import Evaluator
+from utils.LLM_reranker import GeminiReranker
 from tqdm import tqdm
 from llama_index.core.schema import TextNode, Document
+import os
 # from flask import Flask, request, jsonify
 import time
-from llama_index.core import StorageContext
+from llama_index.core import StorageContext, ServiceContext
 from llama_index.llms.gemini import Gemini
 from llama_index.embeddings.gemini import GeminiEmbedding
 from llama_index.core import VectorStoreIndex, Settings
@@ -26,6 +28,9 @@ MILVUS_URI = os.getenv('MILVUS_URI')
 MILVUS_TOKEN = os.getenv('MILVUS_TOKEN')
 GOOGLE_API_KEY = os.getenv('GEMINI_API_KEY')
 
+model_name = 'gemini-1.5-flash-002'
+description_dir = '/Users/albuscorleone/Documents/Schoolwork/Major/Paper AIC/AIC_benchmark/ta_prompt'
+
 # Initialize Gemini LLM and Embedding models
 llm = Gemini(model="models/gemini-1.5-flash", api_key=GOOGLE_API_KEY)
 embed_model = GeminiEmbedding(model_name="models/text-embedding-004", api_key=GOOGLE_API_KEY)
@@ -46,9 +51,9 @@ vector_store = MilvusVectorStore(
     collection_name=os.getenv('COLLECTION')
 )
 
+#Initialize LLMPredictor
 # Create StorageContext with vector store
 storage_context = StorageContext.from_defaults(vector_store=vector_store)
-
 # Create VectorStoreIndex
 index = VectorStoreIndex.from_vector_store(
     vector_store,
@@ -63,7 +68,7 @@ def load_index():
     docstore = SimpleDocumentStore.from_persist_dir("./saved_index")
 
     print("Loading vector store ...")
-
+    
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
     loaded_index = VectorStoreIndex.from_vector_store(vector_store, storage_context=storage_context)
 
@@ -71,12 +76,12 @@ def load_index():
 
     # Create retrievers
     print("Creating retrievers for ownData_fusion...")
-    vector_retriever = loaded_index.as_retriever(similarity_top_k=200)
-    bm25_retriever = BM25Retriever.from_defaults(docstore=docstore, similarity_top_k=10)
+    vector_retriever = loaded_index.as_retriever(similarity_top_k=20)
+    bm25_retriever = BM25Retriever.from_defaults(docstore=docstore, similarity_top_k=20)
 
     # Create FusionRetriever and QueryEngine
     print("Creating FusionRetriever for ownData_fusion...")
-    fusion_retriever = FusionRetriever([vector_retriever, bm25_retriever], similarity_top_k=10)
+    fusion_retriever = FusionRetriever([vector_retriever, bm25_retriever], similarity_top_k=20)
     # query_engine = RetrieverQueryEngine(retriever=fusion_retriever)
 
 def perform_query(query):
@@ -104,8 +109,13 @@ def perform_query(query):
 
 def get_queries():
     print("Start reading")
-    df = pd.read_csv('/Users/minhhieu/Documents/Benchmark_AIC/Text-to-vid Retrieval/MSRVTT_JSFUSION_test.csv', sep=';')
+    df = pd.read_csv('/Users/albuscorleone/Documents/Schoolwork/Major/Paper AIC/AIC_benchmark/MSRVTT_JSFUSION_test.csv', sep=';')
     print("End reading")
+
+    
+    df = df.sort_values(by='video_id')
+    sentences = df['sentence'].tolist()
+    video_ids = df['video_id'].tolist()
 
     print("DataFrame Info:")
     print(df.info())
@@ -113,10 +123,7 @@ def get_queries():
     print(df.head())
     print("\nColumns:", df.columns.tolist())
     print("\nShape:", df.shape)
-    
-    df = df.sort_values(by='video_id')
-    sentences = df['sentence'].tolist()
-    video_ids = df['video_id'].tolist()
+
     return sentences, video_ids
 
 if __name__ == '__main__':
@@ -126,19 +133,33 @@ if __name__ == '__main__':
         print(f"{i}: {query}")
         print(label_set[i])
 
-    num_samples = 10
+    num_samples = 199
 
     result = []
 
-    for query in tqdm(query_set[0:200]):
-       top_k_vid = perform_query(query)
-       result.append(top_k_vid)
-    
-    metrics = Evaluator(label=label_set[0:200], result=result)
+    for query in tqdm(query_set[0:num_samples]):
+        top_k_vid = perform_query(query)
+
+        top_k_description = {}
+        for vid in top_k_vid:
+            file_path = os.path.join(description_dir, vid +'.txt')
+            with open(file_path, 'r') as f:
+                vid_description = f.read()
+                top_k_description.update({vid: vid_description})
+
+        reranker = GeminiReranker(
+            query=query, 
+            top_k_vid=top_k_description, 
+            model_name=model_name, 
+            api_key=GOOGLE_API_KEY
+        )
+
+        top_k_vid = reranker.rerank()
+        result.append(top_k_vid)
+        
+    metrics = Evaluator(label=label_set[0:num_samples], result=result)
     recall1, recall5, recall10 = metrics.perform_evaluation()
     print("Recall 1: ", recall1)
     print("Recall 5: ", recall5)
     print("Recall 10: ", recall10)
-
-    
 

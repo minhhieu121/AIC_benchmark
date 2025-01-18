@@ -1,7 +1,8 @@
 from typing import List
 from llama_index.core.schema import NodeWithScore, TextNode
-from llama_index.core.retrievers import BaseRetriever
+from llama_index.core.retrievers import BaseRetriever, VectorIndexRetriever
 from llama_index.core import QueryBundle
+from llama_index.core.postprocessor import LLMRerank
 import time
 
 
@@ -43,9 +44,9 @@ def fuse_results(results_list, similarity_top_k: int = 10, weights: List[float] 
         reranked_nodes.append(text_to_node[text])
         reranked_nodes[-1].score = score
 
-    print("\nFused and reranked results:")
-    for node in reranked_nodes[:similarity_top_k]:
-        print(f"Node Source: {node.node.metadata['source']}, Fused Score: {node.score}")
+    # print("\nFused and reranked results:")
+    # for node in reranked_nodes[:similarity_top_k]:
+    #     print(f"Node Source: {node.node.metadata['source']}, Fused Score: {node.score}")
 
     return reranked_nodes[:similarity_top_k]
 
@@ -54,10 +55,12 @@ class FusionRetriever(BaseRetriever):
     def __init__(
             self,
             retrievers: List[BaseRetriever],
-            similarity_top_k: int = 10,
+            similarity_top_k: int = 20,
+            reranker_top_n: int = 10
     ) -> None:
         self._retrievers = retrievers
         self._similarity_top_k = similarity_top_k
+        self._reranker_top_n = reranker_top_n
         super().__init__()
 
     def _retrieve(self, query_bundle: QueryBundle) -> List[NodeWithScore]:
@@ -75,23 +78,11 @@ class FusionRetriever(BaseRetriever):
         print(f"Total retrieval execution time: {end_time - start_time:.4f} seconds")
 
         final_results = fuse_results(results_list, similarity_top_k=self._similarity_top_k, weights=[VECTOR_WEIGHT, BM25_WEIGHT])
-        return final_results
-
-    async def _aretrieve(self, query_bundle: QueryBundle) -> List[NodeWithScore]:
-        results_list = []
-        start_time = time.time()
-        for i, retriever in enumerate(self._retrievers):
-            print(retriever, i)
-            print(f"\nRetriever {i + 1} results:")
-            results = retriever.retrieve(query_bundle)
-            for node in results:
-                print(f"Node Source: {node.node.metadata['source']}, Score: {node.score}")
-            results_list.append(results)
-
-        end_time = time.time()
-        print(f"Total retrieval execution time: {end_time - start_time:.4f} seconds")
-
-        final_results = fuse_results(results_list, similarity_top_k=self._similarity_top_k, weights=[VECTOR_WEIGHT, BM25_WEIGHT])
+        
+        # reranker = LLMRerank(top_n = 10)
+        # final_results = reranker.postprocess_nodes(final_results, query_bundle)
+        # for node in final_results:
+        #     print(f"Node Source: {node.node.metadata['source']}, Reranked Score: {node.score}")
 
         return final_results
 

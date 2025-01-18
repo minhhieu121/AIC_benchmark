@@ -33,7 +33,7 @@ vector_store = MilvusVectorStore(
     token=MILVUS_TOKEN, 
     overwrite=True,  # Set to True to overwrite existing collection
     collection_name=os.getenv('COLLECTION'),
-    dim=768
+    dim=768,
 )
 
 # Function to read files from directory
@@ -43,7 +43,7 @@ def read_files_from_directory(directory_path):
     if not os.path.exists(directory_path):
         raise ValueError(f"Directory not found: {directory_path}")
         
-    files = [f for f in os.listdir(directory_path) if f.endswith('.txt')]
+    files = [f for f in sorted(os.listdir(directory_path)) if f.endswith('.txt')]
     
     if not files:
         raise ValueError(f"No .txt files found in {directory_path}")
@@ -67,7 +67,8 @@ def read_files_from_directory(directory_path):
 
 # Main processing
 print("Reading documents...")
-data_dir = os.getenv('OUTPUT_URL')
+# data_dir = os.getenv('OUTPUT_URL')
+data_dir = '/Users/albuscorleone/Documents/Schoolwork/Major/Paper AIC/AIC_benchmark/ta_prompt'
 documents = read_files_from_directory(data_dir)
 
 print(f"Number of documents read: {len(documents)}")

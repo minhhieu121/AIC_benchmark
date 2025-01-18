@@ -1,0 +1,1 @@
+A computer screen displays a graph showing network traffic data over the last 12 months and 24 hours, with separate data for internal and external network interfaces.
